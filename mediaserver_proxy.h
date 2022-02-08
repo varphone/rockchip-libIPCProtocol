@@ -121,7 +121,7 @@ class MediaControl : public MediaControlProxy,
 public:
     MediaControl(DBus::Connection & conn, const char *path, const char *interface)
             : MediaControlProxy(interface)
-            , DBus::ObjectProxy(0, conn, path, MEDIASERVER) {}
+            , DBus::ObjectProxy(conn, path, MEDIASERVER) {}
     virtual ~MediaControl() {}
 private:
 };

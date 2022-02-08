@@ -89,7 +89,7 @@ class DBusNetServer : public netserver_proxy,
 public:
     DBusNetServer(DBus::Connection &connection, const char *adaptor_path,
                   const char *adaptor_name, const char *interface)
-    : DBus::ObjectProxy(0, connection, adaptor_path, adaptor_name), netserver_proxy::netserver_proxy(interface) {}
+    : DBus::ObjectProxy(connection, adaptor_path, adaptor_name), netserver_proxy::netserver_proxy(interface) {}
     ~DBusNetServer() {}
 };
 #endif //__dbusxx__netserver_proxy_h__PROXY_MARSHAL_H

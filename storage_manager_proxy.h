@@ -115,7 +115,7 @@ class DBusStorageManager : public storage_manager_proxy,
 public:
     DBusStorageManager(DBus::Connection &connection, const char *adaptor_path,
                        const char *adaptor_name, const char *interface)
-    : DBus::ObjectProxy(0, connection, adaptor_path, adaptor_name), storage_manager_proxy::storage_manager_proxy(interface) {}
+    : DBus::ObjectProxy(connection, adaptor_path, adaptor_name), storage_manager_proxy::storage_manager_proxy(interface) {}
     ~DBusStorageManager() {}
 };
 #endif

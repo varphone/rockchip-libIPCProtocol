@@ -104,7 +104,7 @@ class DBusSystemManager : public system_manager_proxy,
 public:
     DBusSystemManager(DBus::Connection &connection, const char *adaptor_path,
                       const char *adaptor_name, const char *interface)
-    : DBus::ObjectProxy(0, connection, adaptor_path, adaptor_name), system_manager_proxy::system_manager_proxy(interface) {}
+    : DBus::ObjectProxy(connection, adaptor_path, adaptor_name), system_manager_proxy::system_manager_proxy(interface) {}
     ~DBusSystemManager() {}
 };
 #endif
